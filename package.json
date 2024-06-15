@@ -1,0 +1,13 @@
+{
+	"name": "web-bluetooth",
+	"version": "1.0.0",
+	"description": "Web Bluetooth API",
+	"scripts": {
+		"build": "tsc",
+		"start": "http-server -S -C ./SSL/example.com+5.pem -K ./SSL/example.com+5-key.pem"
+	},
+	"devDependencies": {
+		"typescript": "^5.4.5",
+		"@types/web-bluetooth": "^0.0.20"
+	}
+}
