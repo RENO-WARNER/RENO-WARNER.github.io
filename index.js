@@ -9,7 +9,7 @@ connectButton.addEventListener('click', connect);
 async function connect() {
     await navigator.bluetooth.requestDevice({
         filters: [{ name: 'KINETI' }],
-        //optionalServices: [serviceUuid]
+        optionalServices: [serviceUuid]
     }).then(device => {
         if (!device) {
             throw new Error('No Bluetooth device selected.');
