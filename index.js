@@ -1,6 +1,6 @@
 "use strict";
-const serviceUuid = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
-const characteristicUuid = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
+const serviceUuid = '9ecadc24-0ee5-a9e0-93f3-a3b50100406e';
+const characteristicUuid = '9ecadc24-0ee5-a9e0-93f3-a3b50200406e';
 let bluetoothDevice = null;
 let characteristic = null;
 const dataDisplay = document.getElementById('data_display'); // Non-null assertion 
