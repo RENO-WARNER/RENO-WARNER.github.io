@@ -21,32 +21,32 @@ model_dir = "./MODEL"
 
 # Function to create sequences from the data
 def create_sequences(df, window_size):
-    sequences = []
-    for i in range(len(df) - window_size + 1):
-        window = df.iloc[i:i + window_size]
-        sequences.append(window.values)
-    return sequences
+	sequences = []
+	for i in range(len(df) - window_size + 1):
+		window = df.iloc[i:i + window_size]
+		sequences.append(window.values)
+	return sequences
 
 # Load and process the data
 data = []
 labels = []
 for filename in os.listdir(data_dir):
-    if filename.endswith(".csv"):
-        filepath = os.path.join(data_dir, filename)
-        df = pd.read_csv(filepath)
+	if filename.endswith(".csv"):
+		filepath = os.path.join(data_dir, filename)
+		df = pd.read_csv(filepath)
 
-        # Extract relevant features (accelerometer and gyroscope)
-        features = df[["accelerometer/x", "accelerometer/y", "accelerometer/z",
-                       "gyroscope/x", "gyroscope/y", "gyroscope/z"]]
+		# Extract relevant features (accelerometer and gyroscope)
+		features = df[["accelerometer/x", "accelerometer/y", "accelerometer/z",
+					   "gyroscope/x", "gyroscope/y", "gyroscope/z"]]
 
-        # Extract the workout label from the filename
-        label = filename.split(".")[0]
+		# Extract the workout label from the filename
+		label = filename.split(".")[0]
 
-        # Create sequences and labels
-        sequences = create_sequences(features, window_size)
-        
-        data.extend(sequences)
-        labels.extend([label] * len(sequences))  # Repeat label for each sequence
+		# Create sequences and labels
+		sequences = create_sequences(features, window_size)
+		
+		data.extend(sequences)
+		labels.extend([label] * len(sequences))  # Repeat label for each sequence
 
 # Convert data and labels to numpy arrays
 data = np.array(data)
@@ -99,8 +99,8 @@ cm = confusion_matrix(true_labels, predicted_labels)
 # Plot the confusion matrix
 plt.figure(figsize=(8, 6))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
-            xticklabels=label_encoder.classes_, 
-            yticklabels=label_encoder.classes_)
+			xticklabels=label_encoder.classes_, 
+			yticklabels=label_encoder.classes_)
 plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title('Confusion Matrix')
