@@ -2,7 +2,7 @@ title: "RENO WARNER"
 description: "A showcase of my projects"
 baseurl: "" # Keep it empty if using a GitHub Pages domain
 url: "https://warner.industries" # Change if using a custom domain
-theme: minimal-mistakes-jekyll
+remote_theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
