@@ -7,3 +7,26 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Articles"
+    url: "/articles/"
+
+header:
+  image: "/assets/images/hero.jpg"
+
+footer:
+  links:
+    - title: "GitHub"
+      url: "https://github.com/RENO-WARNER"
+    - title: "LinkedIn"
+      url: "https://www.linkedin.com/in/reno-warner/"
